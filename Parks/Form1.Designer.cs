@@ -61,29 +61,32 @@
             this.leftNavigationPanel.Controls.Add(this.searchButton);
             this.leftNavigationPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftNavigationPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.leftNavigationPanel.Name = "leftNavigationPanel";
-            this.leftNavigationPanel.Size = new System.Drawing.Size(267, 928);
+            this.leftNavigationPanel.Size = new System.Drawing.Size(178, 603);
             this.leftNavigationPanel.TabIndex = 0;
             // 
             // navShowCurrent
             // 
             this.navShowCurrent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.navShowCurrent.Location = new System.Drawing.Point(0, 199);
+            this.navShowCurrent.Location = new System.Drawing.Point(0, 129);
+            this.navShowCurrent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.navShowCurrent.Name = "navShowCurrent";
-            this.navShowCurrent.Size = new System.Drawing.Size(18, 90);
+            this.navShowCurrent.Size = new System.Drawing.Size(12, 58);
             this.navShowCurrent.TabIndex = 0;
             // 
             // homeButton
             // 
             this.homeButton.FlatAppearance.BorderSize = 0;
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeButton.Location = new System.Drawing.Point(24, 199);
+            this.homeButton.Location = new System.Drawing.Point(16, 129);
+            this.homeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(224, 90);
+            this.homeButton.Size = new System.Drawing.Size(149, 58);
             this.homeButton.TabIndex = 9;
             this.homeButton.Text = "  Home";
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -93,9 +96,10 @@
             // logoPicBox
             // 
             this.logoPicBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPicBox.Image")));
-            this.logoPicBox.Location = new System.Drawing.Point(3, 3);
+            this.logoPicBox.Location = new System.Drawing.Point(2, 2);
+            this.logoPicBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logoPicBox.Name = "logoPicBox";
-            this.logoPicBox.Size = new System.Drawing.Size(264, 179);
+            this.logoPicBox.Size = new System.Drawing.Size(176, 116);
             this.logoPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPicBox.TabIndex = 8;
             this.logoPicBox.TabStop = false;
@@ -105,13 +109,14 @@
             // 
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.exitButton.Image = ((System.Drawing.Image)(resources.GetObject("exitButton.Image")));
             this.exitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitButton.Location = new System.Drawing.Point(24, 826);
+            this.exitButton.Location = new System.Drawing.Point(16, 537);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(224, 90);
+            this.exitButton.Size = new System.Drawing.Size(149, 58);
             this.exitButton.TabIndex = 6;
             this.exitButton.Text = "  Exit";
             this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -122,13 +127,14 @@
             // 
             this.recordButton.FlatAppearance.BorderSize = 0;
             this.recordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.recordButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.recordButton.Image = ((System.Drawing.Image)(resources.GetObject("recordButton.Image")));
             this.recordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recordButton.Location = new System.Drawing.Point(24, 583);
+            this.recordButton.Location = new System.Drawing.Point(16, 379);
+            this.recordButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.recordButton.Name = "recordButton";
-            this.recordButton.Size = new System.Drawing.Size(224, 90);
+            this.recordButton.Size = new System.Drawing.Size(149, 58);
             this.recordButton.TabIndex = 5;
             this.recordButton.Text = "  Record A Visit";
             this.recordButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -139,13 +145,14 @@
             // 
             this.planButton.FlatAppearance.BorderSize = 0;
             this.planButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.planButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.planButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.planButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.planButton.Image = ((System.Drawing.Image)(resources.GetObject("planButton.Image")));
             this.planButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.planButton.Location = new System.Drawing.Point(24, 487);
+            this.planButton.Location = new System.Drawing.Point(16, 317);
+            this.planButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.planButton.Name = "planButton";
-            this.planButton.Size = new System.Drawing.Size(224, 90);
+            this.planButton.Size = new System.Drawing.Size(149, 58);
             this.planButton.TabIndex = 4;
             this.planButton.Text = "  Plan A Visit";
             this.planButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -156,13 +163,14 @@
             // 
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
             this.editButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editButton.Location = new System.Drawing.Point(24, 391);
+            this.editButton.Location = new System.Drawing.Point(16, 254);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(224, 90);
+            this.editButton.Size = new System.Drawing.Size(149, 58);
             this.editButton.TabIndex = 3;
             this.editButton.Text = "  Edit Parks";
             this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -173,13 +181,14 @@
             // 
             this.searchButton.FlatAppearance.BorderSize = 0;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchButton.Location = new System.Drawing.Point(24, 295);
+            this.searchButton.Location = new System.Drawing.Point(16, 192);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(224, 90);
+            this.searchButton.Size = new System.Drawing.Size(149, 58);
             this.searchButton.TabIndex = 2;
             this.searchButton.Text = "  Find A Park";
             this.searchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -190,11 +199,12 @@
             // 
             this.viewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(113)))));
             this.viewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.viewButton.Location = new System.Drawing.Point(1305, 862);
+            this.viewButton.Location = new System.Drawing.Point(870, 560);
+            this.viewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(101, 47);
+            this.viewButton.Size = new System.Drawing.Size(67, 31);
             this.viewButton.TabIndex = 3;
             this.viewButton.Text = "View";
             this.viewButton.UseVisualStyleBackColor = false;
@@ -203,20 +213,22 @@
             // viewLabel
             // 
             this.viewLabel.AutoSize = true;
-            this.viewLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewLabel.Location = new System.Drawing.Point(309, 862);
+            this.viewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewLabel.Location = new System.Drawing.Point(206, 560);
+            this.viewLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.viewLabel.Name = "viewLabel";
-            this.viewLabel.Size = new System.Drawing.Size(653, 30);
+            this.viewLabel.Size = new System.Drawing.Size(385, 20);
             this.viewLabel.TabIndex = 2;
             this.viewLabel.Text = "Select a park and press view to see more information.";
             // 
             // mainDataLabel
             // 
             this.mainDataLabel.AutoSize = true;
-            this.mainDataLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainDataLabel.Location = new System.Drawing.Point(309, 583);
+            this.mainDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainDataLabel.Location = new System.Drawing.Point(206, 379);
+            this.mainDataLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mainDataLabel.Name = "mainDataLabel";
-            this.mainDataLabel.Size = new System.Drawing.Size(175, 28);
+            this.mainDataLabel.Size = new System.Drawing.Size(128, 20);
             this.mainDataLabel.TabIndex = 1;
             this.mainDataLabel.Text = "All State Parks";
             // 
@@ -225,28 +237,31 @@
             this.mainDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mainDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mainDataGrid.GridColor = System.Drawing.SystemColors.Control;
-            this.mainDataGrid.Location = new System.Drawing.Point(314, 624);
+            this.mainDataGrid.Location = new System.Drawing.Point(209, 406);
+            this.mainDataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainDataGrid.Name = "mainDataGrid";
             this.mainDataGrid.RowTemplate.Height = 28;
             this.mainDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mainDataGrid.Size = new System.Drawing.Size(1092, 222);
+            this.mainDataGrid.Size = new System.Drawing.Size(728, 144);
             this.mainDataGrid.TabIndex = 0;
             // 
             // mainViewPanel
             // 
             this.mainViewPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainViewPanel.BackgroundImage")));
             this.mainViewPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mainViewPanel.Location = new System.Drawing.Point(267, 0);
+            this.mainViewPanel.Location = new System.Drawing.Point(178, 0);
+            this.mainViewPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainViewPanel.Name = "mainViewPanel";
-            this.mainViewPanel.Size = new System.Drawing.Size(1211, 580);
+            this.mainViewPanel.Size = new System.Drawing.Size(807, 377);
             this.mainViewPanel.TabIndex = 1;
+            this.mainViewPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainViewPanel_Paint);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ClientSize = new System.Drawing.Size(1478, 928);
+            this.ClientSize = new System.Drawing.Size(985, 603);
             this.Controls.Add(this.mainViewPanel);
             this.Controls.Add(this.leftNavigationPanel);
             this.Controls.Add(this.mainDataLabel);
@@ -254,6 +269,7 @@
             this.Controls.Add(this.viewLabel);
             this.Controls.Add(this.viewButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "State Parks";

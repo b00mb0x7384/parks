@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Park.cs" />
     <Compile Include="editUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,8 +64,20 @@
     <Compile Include="homeCustomControl.Designer.cs">
       <DependentUpon>homeCustomControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="planVisitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="planVisitControl.Designer.cs">
+      <DependentUpon>planVisitControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recVisitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="recVisitControl.Designer.cs">
+      <DependentUpon>recVisitControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +99,9 @@
     <EmbeddedResource Include="homeCustomControl.resx">
       <DependentUpon>homeCustomControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="planVisitControl.resx">
+      <DependentUpon>planVisitControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,6 +111,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="recVisitControl.resx">
+      <DependentUpon>recVisitControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="searchUserControl.resx">
       <DependentUpon>searchUserControl.cs</DependentUpon>
     </EmbeddedResource>
