@@ -20,7 +20,7 @@ namespace Parks
         List<Park> parksList = new List<Park>();
 
         private void getParks(){
-            using (var reader = new StreamReader(@"./parks.csv"))
+            using (var reader = new StreamReader(@"../../parks.csv"))
             {
                 while (!reader.EndOfStream){
                     var parkRow = reader.ReadLine();
@@ -202,7 +202,29 @@ namespace Parks
             viewParkControl.nameTextBox.Text = parksList[selectedPark].name;
             viewParkControl.descTextBox.Text = parksList[selectedPark].description;
             viewParkControl.addTextBox.Text = parksList[selectedPark].prettyAddress();
-            // viewParkControl.planCheckYes.Checked = parksList[selectedPark].visited;
+            viewParkControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
+            // TODO: see if we can add a trycatch here so it doesnt explode
+           
+
+            viewParkControl.planCheckYes.Checked = parksList[selectedPark].todo.Equals(true) ? true : false;
+            viewParkControl.planCheckNo.Checked = parksList[selectedPark].todo.Equals(false) ? true : false;
+            //Update the array of we click on this.
+
+            parksList[selectedPark].visited = viewParkControl.planCheckYes.Checked;
+
+            viewParkControl.recCheckYes.Checked = parksList[selectedPark].visited.Equals(true) ? true : false;
+            viewParkControl.recCheckYes.Enabled = false;
+
+            viewParkControl.recCheckNo.Checked = parksList[selectedPark].visited.Equals(false) ? true : false;
+            viewParkControl.recCheckNo.Enabled = false;
+
+            viewParkControl.planCheckNo.Enabled = false;
+            viewParkControl.planCheckYes.Enabled = false;
+
+            //this.visited = visited.Equals("1") ? true : false;
+
+
+
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
             mainViewPanel.Controls.Add(viewParkControl);

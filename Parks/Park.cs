@@ -9,16 +9,6 @@ namespace Parks
 {
     public class Park
     {
-        private int v1;
-        private int v2;
-        private int v3;
-        private int v4;
-        private int v5;
-        private int v6;
-        private int v7;
-        private int v8;
-        private int v9;
-        private int v10;
 
         public String id { get; set; }
         public String name { get; set; }
@@ -29,11 +19,17 @@ namespace Parks
         public String addressState { get; set; }
         public String addressZip { get; set; }
         public String image { get; set; }
-        //public Boolean visited { get; set; }
-        //public Boolean todo { get; set; }
+        public Boolean visited
+        {
+            get; set;
+        }
+        public Boolean todo
+        {
+            get; set;
+        }
 
-        public String visited { get; set; }
-        public String todo { get; set; }
+        //public String visited { get; set; }
+        //public String todo { get; set; }
 
         public String prettyAddress()
         {
@@ -51,27 +47,28 @@ namespace Parks
             this.addressCity = addressCity;
             this.addressState = addressState;
             this.addressZip = addressZip;
-            this.visited = visited;
-            this.todo = todo;
+            //this.visited = visited;
+            //this.todo = todo;
             Trace.WriteLine(visited);
             Trace.WriteLine(todo);
-            //having an issue with these lines below commiting before adding the unit testing suite
-            //this.visited = System.Convert.ToBoolean(visited);
-            //this.todo = System.Convert.ToBoolean(todo);
+            //having an iss-ue with these lines below commiting before adding the unit testing suite
+            try{
+                this.visited =  visited.Equals("1") ? true : false;
+                this.todo = todo.Equals("1") ? true : false;
+
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(visited);
+            }
         }
 
-        public Park(int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8, int v9, int v10)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
-            this.v5 = v5;
-            this.v6 = v6;
-            this.v7 = v7;
-            this.v8 = v8;
-            this.v9 = v9;
-            this.v10 = v10;
-        }
+        
     }
 }
+
+
+
+
+
+

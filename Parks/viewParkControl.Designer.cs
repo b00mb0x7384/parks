@@ -50,7 +50,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(548, 97);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 222);
             this.pictureBox1.TabIndex = 63;
@@ -81,7 +81,7 @@
             // descTextBox
             // 
             this.descTextBox.Location = new System.Drawing.Point(251, 103);
-            this.descTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.descTextBox.Multiline = true;
             this.descTextBox.Name = "descTextBox";
             this.descTextBox.Size = new System.Drawing.Size(240, 218);
@@ -92,7 +92,7 @@
             this.recCheckNo.AutoSize = true;
             this.recCheckNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recCheckNo.Location = new System.Drawing.Point(121, 323);
-            this.recCheckNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recCheckNo.Margin = new System.Windows.Forms.Padding(2);
             this.recCheckNo.Name = "recCheckNo";
             this.recCheckNo.Size = new System.Drawing.Size(40, 17);
             this.recCheckNo.TabIndex = 59;
@@ -104,7 +104,7 @@
             this.recCheckYes.AutoSize = true;
             this.recCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recCheckYes.Location = new System.Drawing.Point(40, 323);
-            this.recCheckYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.recCheckYes.Name = "recCheckYes";
             this.recCheckYes.Size = new System.Drawing.Size(44, 17);
             this.recCheckYes.TabIndex = 58;
@@ -116,7 +116,7 @@
             this.planCheckNo.AutoSize = true;
             this.planCheckNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.planCheckNo.Location = new System.Drawing.Point(121, 250);
-            this.planCheckNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.planCheckNo.Margin = new System.Windows.Forms.Padding(2);
             this.planCheckNo.Name = "planCheckNo";
             this.planCheckNo.Size = new System.Drawing.Size(40, 17);
             this.planCheckNo.TabIndex = 57;
@@ -128,7 +128,7 @@
             this.planCheckYes.AutoSize = true;
             this.planCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.planCheckYes.Location = new System.Drawing.Point(40, 250);
-            this.planCheckYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.planCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.planCheckYes.Name = "planCheckYes";
             this.planCheckYes.Size = new System.Drawing.Size(44, 17);
             this.planCheckYes.TabIndex = 56;
@@ -140,7 +140,7 @@
             this.addTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.addTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addTextBox.Location = new System.Drawing.Point(40, 170);
-            this.addTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.addTextBox.Name = "addTextBox";
             this.addTextBox.Size = new System.Drawing.Size(138, 26);
             this.addTextBox.TabIndex = 55;
@@ -149,7 +149,7 @@
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(39, 97);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(138, 26);
             this.nameTextBox.TabIndex = 54;
@@ -230,7 +230,7 @@
             this.Controls.Add(this.mainDisplayLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.addressLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "viewParkControl";
             this.Size = new System.Drawing.Size(807, 377);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
