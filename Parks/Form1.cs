@@ -24,9 +24,9 @@ namespace Parks
             {
                 while (!reader.EndOfStream){
                     var parkRow = reader.ReadLine();
-                    var parkRowArray = parkRow.Split(',');
+                    var parkRowArray = parkRow.Split(';');
                     // each park has col sorry for this long statement, it was here or in the parks.cs
-                var  tempPark =   new Park(parkRowArray[0], parkRowArray[1], parkRowArray[2], parkRowArray[3], parkRowArray[4], parkRowArray[5], parkRowArray[6], parkRowArray[7], parkRowArray[8], parkRowArray[9], parkRowArray[10]);
+                var  tempPark = new Park(parkRowArray[0],parkRowArray[1], parkRowArray[2],parkRowArray[3],parkRowArray[4],parkRowArray[5], parkRowArray[6],parkRowArray[7],parkRowArray[8],parkRowArray[9],parkRowArray[10]);
                     this.parksList.Add(tempPark);
 
                 }
@@ -202,7 +202,7 @@ namespace Parks
             viewParkControl.nameTextBox.Text = parksList[selectedPark].name;
             viewParkControl.descTextBox.Text = parksList[selectedPark].description;
             viewParkControl.addTextBox.Text = parksList[selectedPark].prettyAddress();
-            viewParkControl.planCheckYes.Checked = parksList[selectedPark].visited;
+            // viewParkControl.planCheckYes.Checked = parksList[selectedPark].visited;
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
             mainViewPanel.Controls.Add(viewParkControl);
