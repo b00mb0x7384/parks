@@ -235,6 +235,10 @@ namespace Parks
         {
 
         }
-        
+        public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
+        {
+            this.Close();
+                }
     }
+
 }

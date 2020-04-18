@@ -48,7 +48,7 @@
             this.recCheckNo.AutoSize = true;
             this.recCheckNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recCheckNo.Location = new System.Drawing.Point(427, 194);
-            this.recCheckNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recCheckNo.Margin = new System.Windows.Forms.Padding(2);
             this.recCheckNo.Name = "recCheckNo";
             this.recCheckNo.Size = new System.Drawing.Size(40, 17);
             this.recCheckNo.TabIndex = 31;
@@ -60,7 +60,7 @@
             this.recCheckYes.AutoSize = true;
             this.recCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recCheckYes.Location = new System.Drawing.Point(346, 194);
-            this.recCheckYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.recCheckYes.Name = "recCheckYes";
             this.recCheckYes.Size = new System.Drawing.Size(44, 17);
             this.recCheckYes.TabIndex = 30;
@@ -72,7 +72,7 @@
             this.planCheckNo.AutoSize = true;
             this.planCheckNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.planCheckNo.Location = new System.Drawing.Point(427, 122);
-            this.planCheckNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.planCheckNo.Margin = new System.Windows.Forms.Padding(2);
             this.planCheckNo.Name = "planCheckNo";
             this.planCheckNo.Size = new System.Drawing.Size(40, 17);
             this.planCheckNo.TabIndex = 29;
@@ -84,7 +84,7 @@
             this.planCheckYes.AutoSize = true;
             this.planCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.planCheckYes.Location = new System.Drawing.Point(346, 122);
-            this.planCheckYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.planCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.planCheckYes.Name = "planCheckYes";
             this.planCheckYes.Size = new System.Drawing.Size(44, 17);
             this.planCheckYes.TabIndex = 28;
@@ -95,7 +95,7 @@
             // 
             this.addTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addTextBox.Location = new System.Drawing.Point(32, 187);
-            this.addTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.addTextBox.Name = "addTextBox";
             this.addTextBox.Size = new System.Drawing.Size(138, 26);
             this.addTextBox.TabIndex = 25;
@@ -104,7 +104,7 @@
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(31, 114);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(138, 26);
             this.nameTextBox.TabIndex = 24;
@@ -171,13 +171,13 @@
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.searchButton.Location = new System.Drawing.Point(346, 265);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(119, 36);
             this.searchButton.TabIndex = 32;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
-            //this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click_1);
             // 
             // searchUserControl
             // 
@@ -197,7 +197,7 @@
             this.Controls.Add(this.mainDisplayLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.addressLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "searchUserControl";
             this.Size = new System.Drawing.Size(807, 377);
             this.ResumeLayout(false);
