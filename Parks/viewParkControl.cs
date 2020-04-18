@@ -14,7 +14,12 @@ namespace Parks
     {
         public viewParkControl()
         {
-            InitializeComponent();
+
+           InitializeComponent();
+            
         }
+     
+
+        
     }
 }

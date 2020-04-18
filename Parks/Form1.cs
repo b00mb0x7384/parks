@@ -9,57 +9,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.IO;
+
 
 namespace Parks
 {
     public partial class MainForm : Form
     {
+        public int selectedPark;
         List<Park> parksList = new List<Park>();
 
-        private void getParks()
-        {
-            string connetionString = null;
-            SqlConnection connection = new SqlConnection("Server= localhost; Database= parkfinderdb; Integrated Security=True;");
-            SqlCommand command;
-            string sql = null;
-            SqlDataReader dataReader;
-            sql = "SELECT p.park_id, p.park_name, p.park_description, p.park_image, a.address_number, a.address_street,a.address_city,a.address_state,a.address_zip FROM parkfinderdb.[dbo].[park] p INNER JOIN parkfinderdb.[dbo].address a    on p.park_id = a.address_id; ";
-            try
+        private void getParks(){
+            using (var reader = new StreamReader(@"./parks.csv"))
             {
-                connection.Open();
-                command = new SqlCommand(sql, connection);
-                dataReader = command.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    var tempPark = new Park(
-                        //todo refacto this to be a loop
-                        dataReader.GetValue(0).ToString(),
-                        dataReader.GetValue(1).ToString(),
-                        dataReader.GetValue(2).ToString(),
-                        dataReader.GetValue(3).ToString(),
-                        dataReader.GetValue(4).ToString(),
-                        dataReader.GetValue(5).ToString(),
-                        dataReader.GetValue(6).ToString(),
-                        dataReader.GetValue(6).ToString(),
-                        dataReader.GetValue(7).ToString(),
-                        false,
-                        false
-                        );
+                while (!reader.EndOfStream){
+                    var parkRow = reader.ReadLine();
+                    var parkRowArray = parkRow.Split(',');
+                    // each park has col sorry for this long statement, it was here or in the parks.cs
+                var  tempPark =   new Park(parkRowArray[0], parkRowArray[1], parkRowArray[2], parkRowArray[3], parkRowArray[4], parkRowArray[5], parkRowArray[6], parkRowArray[7], parkRowArray[8], parkRowArray[9], parkRowArray[10]);
                     this.parksList.Add(tempPark);
 
                 }
-                
                 mainDataGrid.DataSource = this.parksList;
-                dataReader.Close();
-                command.Dispose();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
 
-                MessageBox.Show("Can not open connection ! ");
+
             }
+
         }
 
 
@@ -221,14 +196,17 @@ namespace Parks
         private void viewButton_Click(object sender, EventArgs e)
         {
             //TODO will need to add code that takes selected row from dataviewgrid and populates the viewParkControl fields.
-        
             //Create instance of viewParkControl screen to instert into mainViewPanel
             var viewParkControl = new viewParkControl();
-
+            this.selectedPark = mainDataGrid.CurrentRow.Index;
+            viewParkControl.nameTextBox.Text = parksList[selectedPark].name;
+            viewParkControl.descTextBox.Text = parksList[selectedPark].description;
+            viewParkControl.addTextBox.Text = parksList[selectedPark].prettyAddress();
+            viewParkControl.planCheckYes.Checked = parksList[selectedPark].visited;
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
             mainViewPanel.Controls.Add(viewParkControl);
-
+            
                    }
 
         private void mainViewPanel_Paint(object sender, PaintEventArgs e)

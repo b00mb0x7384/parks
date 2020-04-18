@@ -19,9 +19,14 @@ namespace Parks
         public String image{get; set;}
         public Boolean visited { get; set; }
         public Boolean todo { get; set; }
-
+        public String prettyAddress()
+        {
+          var  add = addressNum + " " + addressStreet + " " + addressCity + " " + addressState + " " + addressZip;
+            return add;
+        }
         // constructor for this class.
-        public Park(String id, String name, String description,String image, String addressNum, String addressStreet, String addressCity, String addressState, String addressZip, Boolean visited,Boolean todo){
+        public Park(String id, String name, String description,String image, String addressNum, String addressStreet, String addressCity, String addressState, String addressZip, String visited,String todo){
+            this.id = id;
             this.name = name;
             this.description = description;
             this.image = image;
@@ -30,8 +35,8 @@ namespace Parks
             this.addressCity = addressCity;
             this.addressState = addressState;
             this.addressZip = addressZip;
-            this.visited = visited;
-            this.todo = todo;
+            this.visited = System.Convert.ToBoolean(visited);
+            this.todo = System.Convert.ToBoolean(todo);
         }
     }
 }
