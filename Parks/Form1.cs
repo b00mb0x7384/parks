@@ -155,7 +155,7 @@ namespace Parks
             //Create instance of home screen to instert into mainViewPanel
            this.planVisitControl = new planVisitControl();
            this.planVisitControl.buttonClicked +=planVisitUserControl_buttonClicked;
-
+            this.updateTheView();
 
             //Navigation highlight
             navShowCurrent.Height = planButton.Height;
@@ -185,7 +185,7 @@ namespace Parks
             //Create instance of home screen to instert into mainViewPanel
             this.recVisitControl = new recVisitControl();
             this.recVisitControl.buttonClicked +=recVisitUserControl_buttonClicked;
-
+            this.updateTheView();
 
             //Navigation highlight
             navShowCurrent.Height = recordButton.Height;
