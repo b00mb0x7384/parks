@@ -51,7 +51,7 @@
             this.recButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.recButton.Location = new System.Drawing.Point(39, 301);
-            this.recButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recButton.Margin = new System.Windows.Forms.Padding(2);
             this.recButton.Name = "recButton";
             this.recButton.Size = new System.Drawing.Size(119, 36);
             this.recButton.TabIndex = 92;
@@ -62,7 +62,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(548, 100);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 222);
             this.pictureBox1.TabIndex = 91;
@@ -93,7 +93,7 @@
             // descTextBox
             // 
             this.descTextBox.Location = new System.Drawing.Point(251, 106);
-            this.descTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.descTextBox.Multiline = true;
             this.descTextBox.Name = "descTextBox";
             this.descTextBox.ReadOnly = true;
@@ -104,7 +104,7 @@
             // 
             this.addTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addTextBox.Location = new System.Drawing.Point(40, 173);
-            this.addTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.addTextBox.Name = "addTextBox";
             this.addTextBox.ReadOnly = true;
             this.addTextBox.Size = new System.Drawing.Size(138, 26);
@@ -114,7 +114,7 @@
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(39, 100);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(138, 26);
@@ -158,7 +158,7 @@
             this.recCheckYes.AutoSize = true;
             this.recCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recCheckYes.Location = new System.Drawing.Point(153, 258);
-            this.recCheckYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.recCheckYes.Name = "recCheckYes";
             this.recCheckYes.Size = new System.Drawing.Size(15, 14);
             this.recCheckYes.TabIndex = 94;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.mainDisplayLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.addressLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "recVisitControl";
             this.Size = new System.Drawing.Size(807, 377);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -208,7 +208,6 @@
         private System.Windows.Forms.Button recButton;
         private System.Windows.Forms.Label imgLabel;
         private System.Windows.Forms.Label descLabel;
-        private System.Windows.Forms.Label mainDisplayLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Label recordLabel;
@@ -217,5 +216,6 @@
         public System.Windows.Forms.TextBox addTextBox;
         public System.Windows.Forms.TextBox nameTextBox;
         public System.Windows.Forms.CheckBox recCheckYes;
+        public System.Windows.Forms.Label mainDisplayLabel;
     }
 }

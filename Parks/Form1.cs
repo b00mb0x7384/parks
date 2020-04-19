@@ -476,7 +476,7 @@ namespace Parks
 
         }
 
-       private int checkboxHandler(String state)
+       public int checkboxHandler(String state)
         {
             switch (state){
                 case "Indeterminate": // show me negative results

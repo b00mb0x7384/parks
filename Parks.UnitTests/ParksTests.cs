@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Parks.Testing
@@ -20,5 +21,29 @@ namespace Parks.Testing
 
 
         }
+
+        [TestMethod]
+        public void testSearchUserControl()
+        {
+            var sUCVar = new searchUserControl();
+            Assert.AreEqual(sUCVar.mainDisplayLabel.Text, "Search for a Park");
+
+        }
+
+        [TestMethod]
+        public void testViewPark()
+        {
+            var component = new viewParkControl();
+            Assert.AreEqual(component.mainDisplayLabel.Text, "Park Information");
+
+        }
+        [TestMethod]
+        public void tesRecControl()
+        {
+            var component = new recVisitControl();
+            Assert.AreEqual(component.mainDisplayLabel.Text, "Park Information");
+
+        }
+
     }
 }
