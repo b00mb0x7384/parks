@@ -30,13 +30,13 @@ namespace Parks
 
 
         private void getParks(){
-            using (var reader = new StreamReader(@"../../parks.csv"))
+            using (var reader = new StreamReader(@"../../_Parks.csv"))
             {
                 while (!reader.EndOfStream){
                     var parkRow = reader.ReadLine();
                     var parkRowArray = parkRow.Split(';');
                     // each park has col sorry for this long statement, it was here or in the parks.cs
-                var  tempPark = new Park(parkRowArray[0],parkRowArray[1], parkRowArray[2],parkRowArray[3],parkRowArray[4],parkRowArray[5], parkRowArray[6],parkRowArray[7],parkRowArray[8],parkRowArray[9],parkRowArray[10]);
+                var  tempPark = new Park(parkRowArray[0],parkRowArray[1], parkRowArray[2],parkRowArray[3],parkRowArray[4],parkRowArray[5],parkRowArray[6]);
                     this.parksList.Add(tempPark);
 
                 }
@@ -374,7 +374,7 @@ namespace Parks
             else
             {
 
-                Park newPark = new Park(parkId, parkName, parkDesc, "default.jpg", "", "", "", "", "", "", "", parkAddress);
+                Park newPark = new Park(parkId, parkName, parkDesc, "default.jpg", parkAddress,"0","0");
                 Trace.WriteLine(newPark.name);
                 this.parksList.Add(newPark);
             }
@@ -387,7 +387,7 @@ namespace Parks
             String parkAddress = editUserControl.addTextBox.Text;
             String parkDesc = editUserControl.descTextBox.Text;
             this.parksList[selectedPark].name = parkName;
-            this.parksList[selectedPark].SetAddress(parkAddress);
+            this.parksList[selectedPark].address = parkAddress;
             this.parksList[selectedPark].description = parkDesc;
 
             updateTheView();
@@ -499,16 +499,14 @@ namespace Parks
         {
 
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            sb.AppendLine("ID,Name,Marks");
             foreach (var item in parksList)
             {
-                sb.AppendLine(item.ToString());
+                sb.AppendLine(item.toCsv());
             }
 
-            Console.WriteLine(sb.ToString());
             System.IO.File.WriteAllText(
                 System.IO.Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory, "parks.txt"),
+                AppDomain.CurrentDomain.BaseDirectory, "../../_Parks.csv"),
                 sb.ToString());
             Console.ReadLine();
 

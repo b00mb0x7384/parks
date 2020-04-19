@@ -13,11 +13,6 @@ namespace Parks
         public String id { get; set; }
         public String name { get; set; }
         public String description{get; set;}
-        private String addressNum { get; set;}
-        private String addressStreet { get; set; }
-        private String addressCity { get; set; }
-        private String addressState { get; set; }
-        private String addressZip { get; set; }
         public String image { get; set; }
         public Boolean visited
         {
@@ -31,47 +26,18 @@ namespace Parks
         //public String visited { get; set; }
         //public String todo { get; set; }
 
-        private String prettyMode
-        {
-            get; set;
-        }
-
-        public void SetAddress(string value)
-        {
-            prettyMode = value;
-        }
-
         public String address
         {
-            get{
-
-                if (prettyMode == "gen")
-                {
-                    var add = addressNum + " " + addressStreet + " " + addressCity + " " + addressState + " " + addressZip;
-                    return add;
-                }
-                else
-                {
-                    return prettyMode;
-                }
-            }
-            
-          
+            get;
+            set;
         }
         // constructor for this class.
-        public Park(String id, String name, String description,String image, String addressNum, String addressStreet, String addressCity, String addressState, String addressZip, String visited,String todo,String prettyMode = "gen"){
+        public Park(String id, String name, String description,String image, String address, String visited,String todo){
             this.id = id;
             this.name = name;
             this.description = description;
             this.image = image;
-            this.addressNum = addressNum;
-            this.addressStreet = addressStreet;
-            this.addressCity = addressCity;
-            this.addressState = addressState;
-            this.addressZip = addressZip;
-            this.prettyMode = prettyMode;
-            //this.visited = visited;
-            //this.todo = todo;
+            this.address = address;
             Trace.WriteLine(visited);
             Trace.WriteLine(todo);
             //having an iss-ue with these lines below commiting before adding the unit testing suite
@@ -86,9 +52,13 @@ namespace Parks
             }
         }
 
-        public void toCsv()
+        public String toCsv()
         {
-            String legalString = this.id + ";" + this.description + ";" + this.image+ ";"
+            var intTodo = this.todo.Equals(true) ? 1 : 0;
+            var intVisit = this.visited.Equals(true) ? 1 : 0;
+
+            String legalString = this.id + ";" + this.name + ";" + this.description + ";" + this.image + ";" + this.address + ";" + intVisit + ";" + intTodo;
+            return legalString;
         }
     }
 
