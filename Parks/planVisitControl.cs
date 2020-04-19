@@ -12,13 +12,27 @@ namespace Parks
 {
     public partial class planVisitControl : UserControl
     {
+
+        public event EventHandler buttonClicked;
+        protected virtual void onButtonClicked(EventArgs e)
+        {
+            buttonClicked?.Invoke(this, e);
+        }
         public planVisitControl()
         {
             InitializeComponent();
         }
 
+
+
+
         private void planVisitControl_Load(object sender, EventArgs e)
         {
+        }
+
+        private void planButton_Click(object sender, EventArgs e)
+        {
+            onButtonClicked(EventArgs.Empty);
 
         }
     }

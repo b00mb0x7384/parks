@@ -12,9 +12,26 @@ namespace Parks
 {
     public partial class recVisitControl : UserControl
     {
+        public event EventHandler buttonClicked;
+        protected virtual void onButtonClicked(EventArgs e)
+        {
+            buttonClicked?.Invoke(this, e);
+        }
+
         public recVisitControl()
         {
             InitializeComponent();
+        }
+
+        private void recCheckYes_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void recButton_Click(object sender, EventArgs e)
+        {
+            onButtonClicked(EventArgs.Empty);
+
         }
     }
 }

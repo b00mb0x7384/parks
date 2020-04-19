@@ -33,7 +33,6 @@
             this.imgLabel = new System.Windows.Forms.Label();
             this.descLabel = new System.Windows.Forms.Label();
             this.descTextBox = new System.Windows.Forms.TextBox();
-            this.planCheckNo = new System.Windows.Forms.CheckBox();
             this.planCheckYes = new System.Windows.Forms.CheckBox();
             this.addTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -48,7 +47,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(548, 97);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 222);
             this.pictureBox1.TabIndex = 78;
@@ -79,42 +78,29 @@
             // descTextBox
             // 
             this.descTextBox.Location = new System.Drawing.Point(251, 103);
-            this.descTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.descTextBox.Multiline = true;
             this.descTextBox.Name = "descTextBox";
             this.descTextBox.ReadOnly = true;
             this.descTextBox.Size = new System.Drawing.Size(240, 218);
             this.descTextBox.TabIndex = 75;
             // 
-            // planCheckNo
-            // 
-            this.planCheckNo.AutoSize = true;
-            this.planCheckNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.planCheckNo.Location = new System.Drawing.Point(121, 250);
-            this.planCheckNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.planCheckNo.Name = "planCheckNo";
-            this.planCheckNo.Size = new System.Drawing.Size(40, 17);
-            this.planCheckNo.TabIndex = 72;
-            this.planCheckNo.Text = "No";
-            this.planCheckNo.UseVisualStyleBackColor = true;
-            // 
             // planCheckYes
             // 
             this.planCheckYes.AutoSize = true;
             this.planCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.planCheckYes.Location = new System.Drawing.Point(40, 250);
-            this.planCheckYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.planCheckYes.Location = new System.Drawing.Point(137, 255);
+            this.planCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.planCheckYes.Name = "planCheckYes";
-            this.planCheckYes.Size = new System.Drawing.Size(44, 17);
+            this.planCheckYes.Size = new System.Drawing.Size(15, 14);
             this.planCheckYes.TabIndex = 71;
-            this.planCheckYes.Text = "Yes";
             this.planCheckYes.UseVisualStyleBackColor = true;
             // 
             // addTextBox
             // 
             this.addTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addTextBox.Location = new System.Drawing.Point(40, 170);
-            this.addTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.addTextBox.Name = "addTextBox";
             this.addTextBox.ReadOnly = true;
             this.addTextBox.Size = new System.Drawing.Size(138, 26);
@@ -124,7 +110,7 @@
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(39, 97);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Multiline = true;
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
@@ -182,12 +168,13 @@
             this.planButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.planButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.planButton.Location = new System.Drawing.Point(39, 298);
-            this.planButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.planButton.Margin = new System.Windows.Forms.Padding(2);
             this.planButton.Name = "planButton";
             this.planButton.Size = new System.Drawing.Size(119, 36);
             this.planButton.TabIndex = 79;
             this.planButton.Text = "Update";
             this.planButton.UseVisualStyleBackColor = false;
+            this.planButton.Click += new System.EventHandler(this.planButton_Click);
             // 
             // planVisitControl
             // 
@@ -200,7 +187,6 @@
             this.Controls.Add(this.imgLabel);
             this.Controls.Add(this.descLabel);
             this.Controls.Add(this.descTextBox);
-            this.Controls.Add(this.planCheckNo);
             this.Controls.Add(this.planCheckYes);
             this.Controls.Add(this.addTextBox);
             this.Controls.Add(this.nameTextBox);
@@ -208,7 +194,7 @@
             this.Controls.Add(this.mainDisplayLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.addressLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "planVisitControl";
             this.Size = new System.Drawing.Size(807, 377);
             this.Load += new System.EventHandler(this.planVisitControl_Load);
@@ -225,12 +211,11 @@
         private System.Windows.Forms.Label mainDisplayLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label addressLabel;
-        private System.Windows.Forms.Button planButton;
         public System.Windows.Forms.TextBox nameTextBox;
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.TextBox descTextBox;
-        public System.Windows.Forms.CheckBox planCheckNo;
         public System.Windows.Forms.CheckBox planCheckYes;
         public System.Windows.Forms.TextBox addTextBox;
+        private System.Windows.Forms.Button planButton;
     }
 }

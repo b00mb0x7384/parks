@@ -154,6 +154,8 @@ namespace Parks
             activeView ="plan";
             //Create instance of home screen to instert into mainViewPanel
            this.planVisitControl = new planVisitControl();
+           this.planVisitControl.buttonClicked +=planVisitUserControl_buttonClicked;
+
 
             //Navigation highlight
             navShowCurrent.Height = planButton.Height;
@@ -179,8 +181,11 @@ namespace Parks
 
         private void recordButton_Click(object sender, EventArgs e)
         {
+            activeView = "record";
             //Create instance of home screen to instert into mainViewPanel
             this.recVisitControl = new recVisitControl();
+            this.recVisitControl.buttonClicked +=recVisitUserControl_buttonClicked;
+
 
             //Navigation highlight
             navShowCurrent.Height = recordButton.Height;
@@ -354,6 +359,24 @@ namespace Parks
 
             updateTheView();
         }
+        private void planVisitUserControl_buttonClicked(object sender, EventArgs e)
+        {
+            if (planVisitControl.planCheckYes.Checked)
+            {
+                parksList[selectedPark].todo = true;
+            }
+
+            updateTheView();
+        }
+        private void recVisitUserControl_buttonClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("clickedUpdateButton");
+            if (recVisitControl.recCheckYes.Checked)
+            {
+                parksList[selectedPark].visited = true;
+            }
+        }
+
 
         private void mainDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -379,6 +402,16 @@ namespace Parks
 
                     break;
 
+
+                case "visit":
+
+                    this.recVisitControl.nameTextBox.Text = this.parksList[selectedPark].name;
+                    this.recVisitControl.descTextBox.Text = this.parksList[selectedPark].description;
+                    this.recVisitControl.addTextBox.Text = this.parksList[selectedPark].address;
+                    this.recVisitControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
+
+                    break;
+
                 default:
                     break;
             }
@@ -391,8 +424,10 @@ namespace Parks
 
 
         }
+
+       
     }
-   
+        
 
 
 }
