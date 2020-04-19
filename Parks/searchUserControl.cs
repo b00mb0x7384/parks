@@ -27,5 +27,22 @@ namespace Parks
 
             onButtonClicked(EventArgs.Empty);
         }
+
+        private void recCheckYes_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void planCheckYes_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
 }

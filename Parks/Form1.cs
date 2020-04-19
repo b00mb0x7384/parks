@@ -219,6 +219,7 @@ namespace Parks
 
         private void viewButton_Click(object sender, EventArgs e)
         {
+            activeView = "view";
             //TODO will need to add code that takes selected row from dataviewgrid and populates the viewParkControl fields.
             //Create instance of viewParkControl screen to instert into mainViewPanel
             this.viewParkControl = new viewParkControl();
@@ -226,28 +227,12 @@ namespace Parks
             this.viewParkControl.nameTextBox.Text = parksList[selectedPark].name;
             this.viewParkControl.descTextBox.Text = parksList[selectedPark].description;
             this.viewParkControl.addTextBox.Text = parksList[selectedPark].address;
-            this.viewParkControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
-            // TODO: see if we can add a trycatch here so it doesnt explode
-           
-
-            this.viewParkControl.planCheckYes.Checked = parksList[selectedPark].todo.Equals(true) ? true : false;
-            this.viewParkControl.planCheckNo.Checked = parksList[selectedPark].todo.Equals(false) ? true : false;
-            //Update the array of we click on this.
-
-            parksList[selectedPark].visited = this.viewParkControl.planCheckYes.Checked;
-
-            this.viewParkControl.recCheckYes.Checked = parksList[selectedPark].visited.Equals(true) ? true : false;
-            this.viewParkControl.recCheckYes.Enabled = false;
-
-            this.viewParkControl.recCheckNo.Checked = parksList[selectedPark].visited.Equals(false) ? true : false;
-            this.viewParkControl.recCheckNo.Enabled = false;
-
-            this.viewParkControl.planCheckNo.Enabled = false;
+            this.viewParkControl.recCheckYes.Enabled = false; 
             this.viewParkControl.planCheckYes.Enabled = false;
-
-            //this.visited = visited.Equals("1") ? true : false;
-
-
+            this.viewParkControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
+            //Update the buttons to reflect the list
+            this.viewParkControl.planCheckYes.Checked = parksList[selectedPark].todo;
+            this.viewParkControl.recCheckYes.Checked = parksList[selectedPark].visited;
 
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
@@ -297,25 +282,64 @@ namespace Parks
                    addMatch(park);
 
                 }
+                //if (park.visited.Equals(this.searchUserControl.recCheckYes.Checked)){
 
-                // i really dont like this functionality below 
-                //if (park.todo.Equals(this.searchUserControl.planCheckYes.Checked))
-                //{
-
+                //    Trace.WriteLine("adding park from method adds" + park.name);
                 //    addMatch(park);
-
-                //}
-                //if (park.todo.Equals(!this.searchUserControl.planCheckNo.Checked))
-                //{
-
-                //    addMatch(park);
-
                 //}
 
+
+                var planCheck = this.checkboxHandler(this.searchUserControl.planCheckYes.CheckState.ToString());
+
+                switch (planCheck){
+
+                    case 0:
+                        if (park.todo.Equals(false))
+                        {
+                            Trace.WriteLine("adding park from method adds" + park.name);
+                            addMatch(park);
+                        }
+                        break;
+                    case 1:
+                        if (park.todo.Equals(true))
+                        {
+                            Trace.WriteLine("adding park from method adds" + park.name);
+                            addMatch(park);
+                        }
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
+
+                var visitCheck = this.checkboxHandler(this.searchUserControl.recCheckYes.CheckState.ToString());
+
+                switch (visitCheck)
+                {
+
+                    case 0:
+                        if (park.visited.Equals(false))
+                        {
+                            Trace.WriteLine("adding park from method adds" + park.name);
+                            addMatch(park);
+                        }
+                        break;
+                    case 1:
+                        if (park.visited.Equals(true))
+                        {
+                            Trace.WriteLine("adding park from method adds" + park.name);
+                            addMatch(park);
+                        }
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
 
 
             }
-            //this.distinctList = this.matches.Distinct().ToList();
 
             mainDataGrid.DataSource = null;
             mainDataGrid.DataSource = this.matches;
@@ -442,7 +466,24 @@ namespace Parks
 
         }
 
-       
+       private int checkboxHandler(String state)
+        {
+            switch (state){
+                case "Indeterminate": // show me negative results
+                    //MessageBox.Show("Ran intermit");
+                    return 0;
+                case "Unchecked":
+                    //MessageBox.Show("Ran uncheck"); // dont show anything;
+                    return 2;
+                    MessageBox.Show("Ran checl");
+                case "Checked":
+                    return 1; // show me where this condition is true
+                default:
+                    //MessageBox.Show("Ran def");
+                    return 0;
+            }
+        
+        }
     }
         
 

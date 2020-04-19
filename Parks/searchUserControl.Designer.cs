@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchUserControl));
-            this.recCheckNo = new System.Windows.Forms.CheckBox();
             this.recCheckYes = new System.Windows.Forms.CheckBox();
-            this.planCheckNo = new System.Windows.Forms.CheckBox();
             this.planCheckYes = new System.Windows.Forms.CheckBox();
             this.addTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -43,53 +41,31 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // recCheckNo
-            // 
-            this.recCheckNo.AutoSize = true;
-            this.recCheckNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recCheckNo.Location = new System.Drawing.Point(427, 194);
-            this.recCheckNo.Margin = new System.Windows.Forms.Padding(2);
-            this.recCheckNo.Name = "recCheckNo";
-            this.recCheckNo.Size = new System.Drawing.Size(40, 17);
-            this.recCheckNo.TabIndex = 31;
-            this.recCheckNo.Text = "No";
-            this.recCheckNo.UseVisualStyleBackColor = true;
-            // 
             // recCheckYes
             // 
             this.recCheckYes.AutoSize = true;
             this.recCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recCheckYes.Location = new System.Drawing.Point(346, 194);
+            this.recCheckYes.Location = new System.Drawing.Point(490, 196);
             this.recCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.recCheckYes.Name = "recCheckYes";
-            this.recCheckYes.Size = new System.Drawing.Size(44, 17);
+            this.recCheckYes.Size = new System.Drawing.Size(15, 14);
             this.recCheckYes.TabIndex = 30;
-            this.recCheckYes.Text = "Yes";
+            this.recCheckYes.ThreeState = true;
             this.recCheckYes.UseVisualStyleBackColor = true;
-            // 
-            // planCheckNo
-            // 
-            this.planCheckNo.AutoSize = true;
-            this.planCheckNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.planCheckNo.Location = new System.Drawing.Point(427, 122);
-            this.planCheckNo.Margin = new System.Windows.Forms.Padding(2);
-            this.planCheckNo.Name = "planCheckNo";
-            this.planCheckNo.Size = new System.Drawing.Size(40, 17);
-            this.planCheckNo.TabIndex = 29;
-            this.planCheckNo.Text = "No";
-            this.planCheckNo.UseVisualStyleBackColor = true;
+            this.recCheckYes.CheckedChanged += new System.EventHandler(this.recCheckYes_CheckedChanged);
             // 
             // planCheckYes
             // 
             this.planCheckYes.AutoSize = true;
             this.planCheckYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.planCheckYes.Location = new System.Drawing.Point(346, 122);
+            this.planCheckYes.Location = new System.Drawing.Point(490, 123);
             this.planCheckYes.Margin = new System.Windows.Forms.Padding(2);
             this.planCheckYes.Name = "planCheckYes";
-            this.planCheckYes.Size = new System.Drawing.Size(44, 17);
+            this.planCheckYes.Size = new System.Drawing.Size(15, 14);
             this.planCheckYes.TabIndex = 28;
-            this.planCheckYes.Text = "Yes";
+            this.planCheckYes.ThreeState = true;
             this.planCheckYes.UseVisualStyleBackColor = true;
+            this.planCheckYes.CheckedChanged += new System.EventHandler(this.planCheckYes_CheckedChanged);
             // 
             // addTextBox
             // 
@@ -186,9 +162,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.recCheckNo);
             this.Controls.Add(this.recCheckYes);
-            this.Controls.Add(this.planCheckNo);
             this.Controls.Add(this.planCheckYes);
             this.Controls.Add(this.addTextBox);
             this.Controls.Add(this.nameTextBox);
@@ -200,6 +174,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "searchUserControl";
             this.Size = new System.Drawing.Size(807, 377);
+            this.Load += new System.EventHandler(this.searchUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,9 +187,7 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Button searchButton;
-        public System.Windows.Forms.CheckBox recCheckNo;
         public System.Windows.Forms.CheckBox recCheckYes;
-        public System.Windows.Forms.CheckBox planCheckNo;
         public System.Windows.Forms.CheckBox planCheckYes;
         public System.Windows.Forms.TextBox addTextBox;
         public System.Windows.Forms.TextBox nameTextBox;
