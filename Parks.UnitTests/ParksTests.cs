@@ -10,7 +10,7 @@ namespace Parks.Testing
         [TestMethod]
         public void testGenerateParks_generatesAPark()
         {
-            Park samplePark = new Park("27", "OSSWALD PARK", "Basketball, golf & athletics facilities can all be found in this large community park.", "osswald_park.jpg", "2220", "NW 21ST AVENUE", "FORT LAUDERDALE", "FL", "33311", "0", "0");
+            Park samplePark = new Park("27", "OSSWALD PARK", "Basketball, golf & athletics facilities can all be found in thi","someImage.jpg", "33311","0", "0");
 
             //arrage
 
@@ -41,7 +41,7 @@ namespace Parks.Testing
         public void tesRecControl()
         {
             var component = new recVisitControl();
-            Assert.AreEqual(component.mainDisplayLabel.Text, "Park Information");
+            Assert.AreEqual(component.mainDisplayLabel.Text, "Record a visit to this park?");
 
         }
 
