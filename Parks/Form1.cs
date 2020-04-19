@@ -212,6 +212,7 @@ namespace Parks
         private void exitButton_Click(object sender, EventArgs e)
         {
             //Close application
+            this.saveToCsv(); //save the stuff
             this.Close();
 
             //TODO add save and prompt message
@@ -494,8 +495,30 @@ namespace Parks
             }
         
         }
-    }
+        public void saveToCsv()
+        {
+
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.AppendLine("ID,Name,Marks");
+            foreach (var item in parksList)
+            {
+                sb.AppendLine(item.ToString());
+            }
+
+            Console.WriteLine(sb.ToString());
+            System.IO.File.WriteAllText(
+                System.IO.Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory, "parks.txt"),
+                sb.ToString());
+            Console.ReadLine();
+
         
+
+
+
+    }
+
+    }
 
 
 }

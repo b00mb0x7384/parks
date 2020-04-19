@@ -86,8 +86,12 @@ namespace Parks
             }
         }
 
-        
+        public void toCsv()
+        {
+            String legalString = this.id + ";" + this.description + ";" + this.image+ ";"
+        }
     }
+
 }
 
 
