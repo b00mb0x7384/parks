@@ -366,9 +366,17 @@ namespace Parks
             String parkAddress = editUserControl.addTextBox.Text;
             String parkDesc = editUserControl.descTextBox.Text;
             String parkId = (this.parksList.Count + 1).ToString();
-            Park newPark = new Park(parkId,parkName, parkDesc, "default.jpg","","","","","","","",parkAddress);
-            Trace.WriteLine(newPark.name);
-            this.parksList.Add(newPark);
+            if (parkName.Equals("") || parkAddress.Equals("") || parkDesc.Equals(""))
+            {
+                MessageBox.Show("Blank Fields Detected! Please Correct These to continue");
+            }
+            else
+            {
+
+                Park newPark = new Park(parkId, parkName, parkDesc, "default.jpg", "", "", "", "", "", "", "", parkAddress);
+                Trace.WriteLine(newPark.name);
+                this.parksList.Add(newPark);
+            }
             updateTheView();
             //MessageBox.Show("hit add button");
         }
@@ -385,6 +393,8 @@ namespace Parks
         }
         private void planVisitUserControl_buttonClicked(object sender, EventArgs e)
         {
+            //updateTheView();
+
             if (planVisitControl.planCheckYes.Checked)
             {
                 parksList[selectedPark].todo = true;
