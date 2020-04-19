@@ -61,7 +61,7 @@
             this.leftNavigationPanel.Controls.Add(this.searchButton);
             this.leftNavigationPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftNavigationPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftNavigationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leftNavigationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.leftNavigationPanel.Name = "leftNavigationPanel";
             this.leftNavigationPanel.Size = new System.Drawing.Size(178, 603);
             this.leftNavigationPanel.TabIndex = 0;
@@ -70,7 +70,7 @@
             // 
             this.navShowCurrent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
             this.navShowCurrent.Location = new System.Drawing.Point(0, 129);
-            this.navShowCurrent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.navShowCurrent.Margin = new System.Windows.Forms.Padding(2);
             this.navShowCurrent.Name = "navShowCurrent";
             this.navShowCurrent.Size = new System.Drawing.Size(12, 58);
             this.navShowCurrent.TabIndex = 0;
@@ -84,7 +84,7 @@
             this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.Location = new System.Drawing.Point(16, 129);
-            this.homeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homeButton.Margin = new System.Windows.Forms.Padding(2);
             this.homeButton.Name = "homeButton";
             this.homeButton.Size = new System.Drawing.Size(149, 58);
             this.homeButton.TabIndex = 9;
@@ -97,7 +97,7 @@
             // 
             this.logoPicBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPicBox.Image")));
             this.logoPicBox.Location = new System.Drawing.Point(2, 2);
-            this.logoPicBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logoPicBox.Margin = new System.Windows.Forms.Padding(2);
             this.logoPicBox.Name = "logoPicBox";
             this.logoPicBox.Size = new System.Drawing.Size(176, 116);
             this.logoPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,7 +114,7 @@
             this.exitButton.Image = ((System.Drawing.Image)(resources.GetObject("exitButton.Image")));
             this.exitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exitButton.Location = new System.Drawing.Point(16, 537);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(149, 58);
             this.exitButton.TabIndex = 6;
@@ -132,7 +132,7 @@
             this.recordButton.Image = ((System.Drawing.Image)(resources.GetObject("recordButton.Image")));
             this.recordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.recordButton.Location = new System.Drawing.Point(16, 379);
-            this.recordButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recordButton.Margin = new System.Windows.Forms.Padding(2);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(149, 58);
             this.recordButton.TabIndex = 5;
@@ -150,7 +150,7 @@
             this.planButton.Image = ((System.Drawing.Image)(resources.GetObject("planButton.Image")));
             this.planButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.planButton.Location = new System.Drawing.Point(16, 317);
-            this.planButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.planButton.Margin = new System.Windows.Forms.Padding(2);
             this.planButton.Name = "planButton";
             this.planButton.Size = new System.Drawing.Size(149, 58);
             this.planButton.TabIndex = 4;
@@ -168,7 +168,7 @@
             this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
             this.editButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editButton.Location = new System.Drawing.Point(16, 254);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(149, 58);
             this.editButton.TabIndex = 3;
@@ -186,7 +186,7 @@
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.searchButton.Location = new System.Drawing.Point(16, 192);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(149, 58);
             this.searchButton.TabIndex = 2;
@@ -202,7 +202,7 @@
             this.viewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewButton.Location = new System.Drawing.Point(870, 560);
-            this.viewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewButton.Margin = new System.Windows.Forms.Padding(2);
             this.viewButton.Name = "viewButton";
             this.viewButton.Size = new System.Drawing.Size(67, 31);
             this.viewButton.TabIndex = 3;
@@ -238,19 +238,20 @@
             this.mainDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mainDataGrid.GridColor = System.Drawing.SystemColors.Control;
             this.mainDataGrid.Location = new System.Drawing.Point(209, 406);
-            this.mainDataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.mainDataGrid.Name = "mainDataGrid";
             this.mainDataGrid.RowTemplate.Height = 28;
             this.mainDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mainDataGrid.Size = new System.Drawing.Size(728, 144);
             this.mainDataGrid.TabIndex = 0;
+            this.mainDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mainDataGrid_CellContentClick);
             // 
             // mainViewPanel
             // 
             this.mainViewPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainViewPanel.BackgroundImage")));
             this.mainViewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainViewPanel.Location = new System.Drawing.Point(178, 0);
-            this.mainViewPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainViewPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainViewPanel.Name = "mainViewPanel";
             this.mainViewPanel.Size = new System.Drawing.Size(807, 377);
             this.mainViewPanel.TabIndex = 1;
@@ -269,7 +270,7 @@
             this.Controls.Add(this.viewLabel);
             this.Controls.Add(this.viewButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "State Parks";

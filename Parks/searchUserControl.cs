@@ -12,15 +12,20 @@ namespace Parks
 {
     public partial class searchUserControl : UserControl  
     {
+        public event EventHandler buttonClicked;
+        protected virtual void onButtonClicked(EventArgs e)
+        {
+            buttonClicked?.Invoke(this, e);
+        }
         public searchUserControl()
         {
             InitializeComponent();
         }
 
-       
         private void searchButton_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("fizz");
+
+            onButtonClicked(EventArgs.Empty);
         }
     }
 }

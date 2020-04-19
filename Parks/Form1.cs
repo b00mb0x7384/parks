@@ -10,14 +10,23 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
-
+using System.Text.RegularExpressions;
 
 namespace Parks
 {
     public partial class MainForm : Form
     {
+        editUserControl editUserControl;
+        planVisitControl planVisitControl;
+        recVisitControl recVisitControl;
+        viewParkControl viewParkControl;
+        searchUserControl searchUserControl;
         public int selectedPark;
         List<Park> parksList = new List<Park>();
+        List<Park> matches = new List<Park>();
+        List<Park> distinctList = new List<Park>();
+        String activeView;
+
 
         private void getParks(){
             using (var reader = new StreamReader(@"../../parks.csv"))
@@ -81,7 +90,8 @@ namespace Parks
         private void searchButton_Click(object sender, EventArgs e)
         {
             //Create instance of home screen to instert into mainViewPanel
-            var searchUserControl = new searchUserControl();
+             this.searchUserControl = new searchUserControl();
+            this.searchUserControl.buttonClicked += searchUserControl_buttonClicked;
 
             //Navigation highlight
             navShowCurrent.Height = searchButton.Height;
@@ -92,7 +102,7 @@ namespace Parks
 
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
-            mainViewPanel.Controls.Add(searchUserControl);
+            mainViewPanel.Controls.Add(this.searchUserControl);
 
             //Changes dataGridView Label
             mainDataLabel.Text = "Search Results";
@@ -106,8 +116,13 @@ namespace Parks
 
         private void editButton_Click(object sender, EventArgs e)
         {
+            this.activeView = "edit";
             //Create instance of home screen to instert into mainViewPanel
-            var editUserControl = new editUserControl();
+           this.editUserControl = new editUserControl();
+            this.editUserControl.deleteButtonClicked += editUserControl_deleteButtonClicked;
+            this.editUserControl.addButtonClicked += editUserControl_addButtonClicked;
+            this.editUserControl.updateButtonClicked += editUserControl_updateButtonClicked;
+
 
             //Navigation highlight
             navShowCurrent.Height = editButton.Height;
@@ -118,7 +133,7 @@ namespace Parks
 
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
-            mainViewPanel.Controls.Add(editUserControl);
+            mainViewPanel.Controls.Add(this.editUserControl);
 
             //Changes dataGridView Label
             mainDataLabel.Text = "Select Park to Edit";
@@ -134,7 +149,7 @@ namespace Parks
         private void planButton_Click(object sender, EventArgs e)
         {
             //Create instance of home screen to instert into mainViewPanel
-            var planVisitControl = new planVisitControl();
+           this.planVisitControl = new planVisitControl();
 
             //Navigation highlight
             navShowCurrent.Height = planButton.Height;
@@ -145,7 +160,7 @@ namespace Parks
 
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
-            mainViewPanel.Controls.Add(planVisitControl);
+            mainViewPanel.Controls.Add(this.planVisitControl);
 
             //Changes dataGridView Label
             mainDataLabel.Text = "Select Park to Edit";
@@ -161,7 +176,7 @@ namespace Parks
         private void recordButton_Click(object sender, EventArgs e)
         {
             //Create instance of home screen to instert into mainViewPanel
-            var recVisitControl = new recVisitControl();
+            this.recVisitControl = new recVisitControl();
 
             //Navigation highlight
             navShowCurrent.Height = recordButton.Height;
@@ -172,7 +187,7 @@ namespace Parks
 
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
-            mainViewPanel.Controls.Add(recVisitControl);
+            mainViewPanel.Controls.Add(this.recVisitControl);
 
             //Changes dataGridView Label
             mainDataLabel.Text = "Select Park to Edit";
@@ -197,29 +212,29 @@ namespace Parks
         {
             //TODO will need to add code that takes selected row from dataviewgrid and populates the viewParkControl fields.
             //Create instance of viewParkControl screen to instert into mainViewPanel
-            var viewParkControl = new viewParkControl();
+            this.viewParkControl = new viewParkControl();
             this.selectedPark = mainDataGrid.CurrentRow.Index;
-            viewParkControl.nameTextBox.Text = parksList[selectedPark].name;
-            viewParkControl.descTextBox.Text = parksList[selectedPark].description;
-            viewParkControl.addTextBox.Text = parksList[selectedPark].prettyAddress();
-            viewParkControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
+            this.viewParkControl.nameTextBox.Text = parksList[selectedPark].name;
+            this.viewParkControl.descTextBox.Text = parksList[selectedPark].description;
+            this.viewParkControl.addTextBox.Text = parksList[selectedPark].prettyAddress();
+            this.viewParkControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
             // TODO: see if we can add a trycatch here so it doesnt explode
            
 
-            viewParkControl.planCheckYes.Checked = parksList[selectedPark].todo.Equals(true) ? true : false;
-            viewParkControl.planCheckNo.Checked = parksList[selectedPark].todo.Equals(false) ? true : false;
+            this.viewParkControl.planCheckYes.Checked = parksList[selectedPark].todo.Equals(true) ? true : false;
+            this.viewParkControl.planCheckNo.Checked = parksList[selectedPark].todo.Equals(false) ? true : false;
             //Update the array of we click on this.
 
-            parksList[selectedPark].visited = viewParkControl.planCheckYes.Checked;
+            parksList[selectedPark].visited = this.viewParkControl.planCheckYes.Checked;
 
-            viewParkControl.recCheckYes.Checked = parksList[selectedPark].visited.Equals(true) ? true : false;
-            viewParkControl.recCheckYes.Enabled = false;
+            this.viewParkControl.recCheckYes.Checked = parksList[selectedPark].visited.Equals(true) ? true : false;
+            this.viewParkControl.recCheckYes.Enabled = false;
 
-            viewParkControl.recCheckNo.Checked = parksList[selectedPark].visited.Equals(false) ? true : false;
-            viewParkControl.recCheckNo.Enabled = false;
+            this.viewParkControl.recCheckNo.Checked = parksList[selectedPark].visited.Equals(false) ? true : false;
+            this.viewParkControl.recCheckNo.Enabled = false;
 
-            viewParkControl.planCheckNo.Enabled = false;
-            viewParkControl.planCheckYes.Enabled = false;
+            this.viewParkControl.planCheckNo.Enabled = false;
+            this.viewParkControl.planCheckYes.Enabled = false;
 
             //this.visited = visited.Equals("1") ? true : false;
 
@@ -227,7 +242,7 @@ namespace Parks
 
             //Clear the mainViewPanel and add the desired user control
             mainViewPanel.Controls.Clear();
-            mainViewPanel.Controls.Add(viewParkControl);
+            mainViewPanel.Controls.Add(this.viewParkControl);
             
                    }
 
@@ -235,10 +250,104 @@ namespace Parks
         {
 
         }
-        public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
+
+        private void addMatch(Park x)
         {
-            this.Close();
+            bool alreadyExist = this.matches.Contains(x);
+            if (!alreadyExist)
+            {
+                Trace.WriteLine("adding park" + x.name);
+                this.matches.Add(x);
+            }
+            else
+            {
+                Trace.Write("Already Exists not adding park " + x.name);
+            }
+
+
+        }
+        private void searchUserControl_buttonClicked(object sender, EventArgs e)
+        {
+            
+            this.matches.Clear();
+            //mainDataGrid.DataSource = parksList;
+            foreach (Park park in parksList)
+            {
+                if (park.name.Contains(this.searchUserControl.nameTextBox.Text.ToUpper()) && this.searchUserControl.nameTextBox.Text.ToUpper() != "")
+                {
+                    Trace.WriteLine("adding park from method name" + park.name);
+                   addMatch(park);
+
+                    
                 }
+
+                if (park.prettyAddress().ToUpper().Contains(this.searchUserControl.addTextBox.Text.ToUpper()) && this.searchUserControl.addTextBox.Text.ToUpper() != "")
+                {
+                    
+                    Trace.WriteLine("adding park from method adds" + park.name);
+                   addMatch(park);
+
+                }
+
+                // i really dont like this functionality below 
+                //if (park.todo.Equals(this.searchUserControl.planCheckYes.Checked))
+                //{
+
+                //    addMatch(park);
+
+                //}
+                //if (park.todo.Equals(!this.searchUserControl.planCheckNo.Checked))
+                //{
+
+                //    addMatch(park);
+
+                //}
+
+
+
+            }
+            //this.distinctList = this.matches.Distinct().ToList();
+
+            mainDataGrid.DataSource = null;
+            mainDataGrid.DataSource = this.matches;
+
+
+
+
+            //var searchResults = parksList.Find(x => x.name.Contains(this.searchUserControl.nameTextBox.Text.ToUpper()));
+            //MessageBox.Show(matchingvalues.ToString());
+
+
+        }
+        private void editUserControl_deleteButtonClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("hit delete button");     
+        }
+        private void editUserControl_addButtonClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("hit add button");
+        }
+        private void editUserControl_updateButtonClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("hit update button");
+        }
+
+        private void mainDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("clicked on a cell" + parksList[selectedPark].name);
+            switch (activeView)
+            {
+                case "edit":
+                    this.editUserControl.nameTextBox.Text = this.parksList[selectedPark].name;
+                    this.editUserControl.descTextBox.Text = this.parksList[selectedPark].description;
+                    this.editUserControl.addTextBox.Text = this.parksList[selectedPark].prettyAddress();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
+   
+
 
 }

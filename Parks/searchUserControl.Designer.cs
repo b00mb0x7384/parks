@@ -206,18 +206,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox recCheckNo;
-        private System.Windows.Forms.CheckBox recCheckYes;
-        private System.Windows.Forms.CheckBox planCheckNo;
-        private System.Windows.Forms.CheckBox planCheckYes;
-        private System.Windows.Forms.TextBox addTextBox;
-        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label recordLabel;
         private System.Windows.Forms.Label planLabel;
         private System.Windows.Forms.Label mainDisplayLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Button searchButton;
+        public System.Windows.Forms.CheckBox recCheckNo;
+        public System.Windows.Forms.CheckBox recCheckYes;
+        public System.Windows.Forms.CheckBox planCheckNo;
+        public System.Windows.Forms.CheckBox planCheckYes;
+        public System.Windows.Forms.TextBox addTextBox;
+        public System.Windows.Forms.TextBox nameTextBox;
     }
 }
