@@ -13,11 +13,11 @@ namespace Parks
         public String id { get; set; }
         public String name { get; set; }
         public String description{get; set;}
-        public String addressNum { get; set;}
-        public String addressStreet { get; set; }
-        public String addressCity { get; set; }
-        public String addressState { get; set; }
-        public String addressZip { get; set; }
+        private String addressNum { get; set;}
+        private String addressStreet { get; set; }
+        private String addressCity { get; set; }
+        private String addressState { get; set; }
+        private String addressZip { get; set; }
         public String image { get; set; }
         public Boolean visited
         {
@@ -31,13 +31,35 @@ namespace Parks
         //public String visited { get; set; }
         //public String todo { get; set; }
 
-        public String prettyAddress()
+        private String prettyMode
         {
-          var  add = addressNum + " " + addressStreet + " " + addressCity + " " + addressState + " " + addressZip;
-            return add;
+            get; set;
+        }
+
+        public void SetAddress(string value)
+        {
+            prettyMode = value;
+        }
+
+        public String address
+        {
+            get{
+
+                if (prettyMode == "gen")
+                {
+                    var add = addressNum + " " + addressStreet + " " + addressCity + " " + addressState + " " + addressZip;
+                    return add;
+                }
+                else
+                {
+                    return prettyMode;
+                }
+            }
+            
+          
         }
         // constructor for this class.
-        public Park(String id, String name, String description,String image, String addressNum, String addressStreet, String addressCity, String addressState, String addressZip, String visited,String todo){
+        public Park(String id, String name, String description,String image, String addressNum, String addressStreet, String addressCity, String addressState, String addressZip, String visited,String todo,String prettyMode = "gen"){
             this.id = id;
             this.name = name;
             this.description = description;
@@ -47,6 +69,7 @@ namespace Parks
             this.addressCity = addressCity;
             this.addressState = addressState;
             this.addressZip = addressZip;
+            this.prettyMode = prettyMode;
             //this.visited = visited;
             //this.todo = todo;
             Trace.WriteLine(visited);

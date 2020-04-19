@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 
 namespace Parks
 {
+    //TODO: add activeview to all of these methods below so that we dont get stuck on edit;
     public partial class MainForm : Form
     {
         editUserControl editUserControl;
@@ -39,8 +40,7 @@ namespace Parks
                     this.parksList.Add(tempPark);
 
                 }
-                mainDataGrid.DataSource = this.parksList;
-
+                updateTheView();
 
             }
 
@@ -84,6 +84,8 @@ namespace Parks
 
             //Show view button
             viewButton.Visible = true;
+            updateTheView();
+
 
         }
 
@@ -119,6 +121,7 @@ namespace Parks
             this.activeView = "edit";
             //Create instance of home screen to instert into mainViewPanel
            this.editUserControl = new editUserControl();
+            this.updateTheView();
             this.editUserControl.deleteButtonClicked += editUserControl_deleteButtonClicked;
             this.editUserControl.addButtonClicked += editUserControl_addButtonClicked;
             this.editUserControl.updateButtonClicked += editUserControl_updateButtonClicked;
@@ -148,6 +151,7 @@ namespace Parks
 
         private void planButton_Click(object sender, EventArgs e)
         {
+            activeView ="plan";
             //Create instance of home screen to instert into mainViewPanel
            this.planVisitControl = new planVisitControl();
 
@@ -216,7 +220,7 @@ namespace Parks
             this.selectedPark = mainDataGrid.CurrentRow.Index;
             this.viewParkControl.nameTextBox.Text = parksList[selectedPark].name;
             this.viewParkControl.descTextBox.Text = parksList[selectedPark].description;
-            this.viewParkControl.addTextBox.Text = parksList[selectedPark].prettyAddress();
+            this.viewParkControl.addTextBox.Text = parksList[selectedPark].address;
             this.viewParkControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
             // TODO: see if we can add a trycatch here so it doesnt explode
            
@@ -273,7 +277,7 @@ namespace Parks
             //mainDataGrid.DataSource = parksList;
             foreach (Park park in parksList)
             {
-                if (park.name.Contains(this.searchUserControl.nameTextBox.Text.ToUpper()) && this.searchUserControl.nameTextBox.Text.ToUpper() != "")
+                if (park.name.ToUpper().Contains(this.searchUserControl.nameTextBox.Text.ToUpper()) && this.searchUserControl.nameTextBox.Text.ToUpper() != "")
                 {
                     Trace.WriteLine("adding park from method name" + park.name);
                    addMatch(park);
@@ -281,7 +285,7 @@ namespace Parks
                     
                 }
 
-                if (park.prettyAddress().ToUpper().Contains(this.searchUserControl.addTextBox.Text.ToUpper()) && this.searchUserControl.addTextBox.Text.ToUpper() != "")
+                if (park.address.ToUpper().Contains(this.searchUserControl.addTextBox.Text.ToUpper()) && this.searchUserControl.addTextBox.Text.ToUpper() != "")
                 {
                     
                     Trace.WriteLine("adding park from method adds" + park.name);
@@ -310,6 +314,7 @@ namespace Parks
 
             mainDataGrid.DataSource = null;
             mainDataGrid.DataSource = this.matches;
+            mainDataGrid.Columns["image"].Visible = false;
 
 
 
@@ -321,30 +326,70 @@ namespace Parks
         }
         private void editUserControl_deleteButtonClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("hit delete button");     
+            //MessageBox.Show("hit delete button");
+            parksList.RemoveAt(selectedPark);
+            updateTheView();
         }
         private void editUserControl_addButtonClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("hit add button");
+
+            String parkName = editUserControl.nameTextBox.Text;
+            String parkAddress = editUserControl.addTextBox.Text;
+            String parkDesc = editUserControl.descTextBox.Text;
+            String parkId = (this.parksList.Count + 1).ToString();
+            Park newPark = new Park(parkId,parkName, parkDesc, "default.jpg","","","","","","","",parkAddress);
+            Trace.WriteLine(newPark.name);
+            this.parksList.Add(newPark);
+            updateTheView();
+            //MessageBox.Show("hit add button");
         }
         private void editUserControl_updateButtonClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("hit update button");
+            String parkName = editUserControl.nameTextBox.Text;
+            String parkAddress = editUserControl.addTextBox.Text;
+            String parkDesc = editUserControl.descTextBox.Text;
+            this.parksList[selectedPark].name = parkName;
+            this.parksList[selectedPark].SetAddress(parkAddress);
+            this.parksList[selectedPark].description = parkDesc;
+
+            updateTheView();
         }
 
         private void mainDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            selectedPark = -1;
+            selectedPark = mainDataGrid.CurrentRow.Index;
             MessageBox.Show("clicked on a cell" + parksList[selectedPark].name);
             switch (activeView)
             {
                 case "edit":
+                   
                     this.editUserControl.nameTextBox.Text = this.parksList[selectedPark].name;
                     this.editUserControl.descTextBox.Text = this.parksList[selectedPark].description;
-                    this.editUserControl.addTextBox.Text = this.parksList[selectedPark].prettyAddress();
+                    this.editUserControl.addTextBox.Text = this.parksList[selectedPark].address;
+
                     break;
+
+                case "plan":
+
+                    this.planVisitControl.nameTextBox.Text = this.parksList[selectedPark].name;
+                    this.planVisitControl.descTextBox.Text = this.parksList[selectedPark].description;
+                    this.planVisitControl.addTextBox.Text = this.parksList[selectedPark].address;
+                    this.planVisitControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
+
+                    break;
+
                 default:
                     break;
             }
+        }
+        private void updateTheView()
+        {
+            mainDataGrid.DataSource = null;
+            mainDataGrid.DataSource = this.parksList;
+            mainDataGrid.Columns["image"].Visible = false;
+
+
         }
     }
    

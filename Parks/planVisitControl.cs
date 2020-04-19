@@ -16,5 +16,10 @@ namespace Parks
         {
             InitializeComponent();
         }
+
+        private void planVisitControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
