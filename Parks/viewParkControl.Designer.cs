@@ -216,7 +216,6 @@
         private System.Windows.Forms.Label descLabel;
         private System.Windows.Forms.Label recordLabel;
         private System.Windows.Forms.Label planLabel;
-        private System.Windows.Forms.Label mainDisplayLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label addressLabel;
         public System.Windows.Forms.TextBox nameTextBox;
@@ -225,5 +224,6 @@
         public System.Windows.Forms.TextBox addTextBox;
         public System.Windows.Forms.CheckBox recCheckYes;
         public System.Windows.Forms.CheckBox planCheckYes;
+        public System.Windows.Forms.Label mainDisplayLabel;
     }
 }
