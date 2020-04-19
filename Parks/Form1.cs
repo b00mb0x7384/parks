@@ -365,16 +365,30 @@ namespace Parks
             {
                 parksList[selectedPark].todo = true;
             }
+            else
+            {
+                parksList[selectedPark].todo = false;
+
+
+            }
 
             updateTheView();
         }
         private void recVisitUserControl_buttonClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("clickedUpdateButton");
+            //MessageBox.Show("clickedUpdateButton");
             if (recVisitControl.recCheckYes.Checked)
             {
                 parksList[selectedPark].visited = true;
             }
+            else
+            {
+
+                parksList[selectedPark].visited = false;
+
+            }
+            updateTheView();
+
         }
 
 
@@ -382,7 +396,7 @@ namespace Parks
         {
             selectedPark = -1;
             selectedPark = mainDataGrid.CurrentRow.Index;
-            MessageBox.Show("clicked on a cell" + parksList[selectedPark].name);
+            //MessageBox.Show("clicked on a cell" + parksList[selectedPark].name);
             switch (activeView)
             {
                 case "edit":
@@ -398,16 +412,19 @@ namespace Parks
                     this.planVisitControl.nameTextBox.Text = this.parksList[selectedPark].name;
                     this.planVisitControl.descTextBox.Text = this.parksList[selectedPark].description;
                     this.planVisitControl.addTextBox.Text = this.parksList[selectedPark].address;
+                    this.planVisitControl.planCheckYes.Checked = this.parksList[selectedPark].todo;
                     this.planVisitControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
 
                     break;
 
 
-                case "visit":
+                case "record":
 
                     this.recVisitControl.nameTextBox.Text = this.parksList[selectedPark].name;
                     this.recVisitControl.descTextBox.Text = this.parksList[selectedPark].description;
                     this.recVisitControl.addTextBox.Text = this.parksList[selectedPark].address;
+                    this.recVisitControl.recCheckYes.Checked = this.parksList[selectedPark].visited;
+
                     this.recVisitControl.pictureBox1.ImageLocation = @"../../park_images/" + parksList[selectedPark].image;
 
                     break;
